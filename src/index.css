@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Gen-Z Vibrant Color Palette */
+    --background: 270 50% 3%;
+    --foreground: 60 9% 98%;
+    --card: 270 40% 6%;
+    --card-foreground: 60 9% 98%;
+    --popover: 270 40% 6%;
+    --popover-foreground: 60 9% 98%;
+    
+    /* Electric Purple as Primary */
+    --primary: 270 95% 65%;
+    --primary-foreground: 270 50% 3%;
+    
+    /* Neon Cyan as Secondary */
+    --secondary: 175 95% 50%;
+    --secondary-foreground: 270 50% 3%;
+    
+    /* Hot Pink for Accents */
+    --accent: 330 95% 60%;
+    --accent-foreground: 60 9% 98%;
+    
+    --muted: 270 30% 15%;
+    --muted-foreground: 270 10% 60%;
+    
+    /* Coral/Orange for Destructive */
+    --destructive: 15 95% 60%;
+    --destructive-foreground: 60 9% 98%;
+    
+    --border: 270 30% 18%;
+    --input: 270 30% 18%;
+    --ring: 270 95% 65%;
+    --radius: 1rem;
+    
+    /* Custom Gen-Z Colors */
+    --neon-green: 150 100% 50%;
+    --electric-blue: 210 100% 60%;
+    --sunset-orange: 25 100% 60%;
+    --lavender: 270 70% 75%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Gen-Z Gradient Backgrounds */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    hsl(270 50% 5%) 0%,
+    hsl(280 60% 8%) 25%,
+    hsl(260 50% 6%) 50%,
+    hsl(270 40% 4%) 100%
+  );
+}
+
+.gradient-card {
+  background: linear-gradient(
+    145deg,
+    hsl(270 40% 8%) 0%,
+    hsl(270 35% 6%) 100%
+  );
+}
+
+.gradient-primary {
+  background: linear-gradient(
+    135deg,
+    hsl(270 95% 65%) 0%,
+    hsl(300 95% 60%) 50%,
+    hsl(330 95% 60%) 100%
+  );
+}
+
+.gradient-success {
+  background: linear-gradient(
+    135deg,
+    hsl(150 100% 45%) 0%,
+    hsl(175 95% 50%) 100%
+  );
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: 0 0 20px hsl(270 95% 65% / 0.4),
+              0 0 40px hsl(270 95% 65% / 0.2);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px hsl(175 95% 50% / 0.4),
+              0 0 40px hsl(175 95% 50% / 0.2);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px hsl(330 95% 60% / 0.4),
+              0 0 40px hsl(330 95% 60% / 0.2);
+}
+
+.glow-success {
+  box-shadow: 0 0 20px hsl(150 100% 50% / 0.4),
+              0 0 40px hsl(150 100% 50% / 0.2);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(270 95% 70%) 0%,
+    hsl(330 95% 65%) 50%,
+    hsl(175 95% 55%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom animations */
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(270 95% 65% / 0.4),
+                0 0 40px hsl(270 95% 65% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(270 95% 65% / 0.6),
+                0 0 60px hsl(270 95% 65% / 0.3);
+  }
+}
+
+@keyframes border-dance {
+  0%, 100% {
+    border-color: hsl(270 95% 65%);
+  }
+  33% {
+    border-color: hsl(330 95% 60%);
+  }
+  66% {
+    border-color: hsl(175 95% 50%);
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-border-dance {
+  animation: border-dance 3s ease-in-out infinite;
+}
+
+/* Camera overlay styles */
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Face guide oval with gradient border */
+.face-guide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 280px;
+  border: 3px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.face-guide.active {
+  border-color: hsl(150 100% 50%);
+  border-style: solid;
+  box-shadow: 0 0 30px hsl(150 100% 50% / 0.5),
+              inset 0 0 30px hsl(150 100% 50% / 0.1);
+}
+
+/* Progress ring */
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-ring circle {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Glassmorphism */
+.glass {
+  background: hsl(270 40% 10% / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(270 30% 20% / 0.5);
+}
+
+/* Neon text */
+.neon-text {
+  text-shadow: 0 0 10px currentColor,
+               0 0 20px currentColor,
+               0 0 40px currentColor;
+}
